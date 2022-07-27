@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% block title %}
@@ -17,6 +16,13 @@
         <li>Nombre: {{request.user.first_name}}</li>
         <li>Apellido: {{request.user.last_name}}</li>
         <li>Email: {{request.user.email}}</li>
+
+        <li>Link: {{request.user.masdatosusuarios.Link}}</li>
+
+        
+        <li>Descripcion: {{request.user.masdatosusuarios.descripcion | safe}}</li>
+        
+        
         <li>
             <p>Avatar:</p>
             {% if request.user.masdatosusuarios.avatar %}

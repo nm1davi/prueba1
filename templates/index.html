@@ -8,10 +8,13 @@
             <div class="col-xl-6">
                 <div class="text-center text-white">
                     <!-- Page heading-->
-                    <h1 class="mb-5">{% block texto_header %} Inicio {% endblock texto_header %}</h1>
+                    <h1 class="mb-5">{% block texto_header %} <p style="text-align: center;">&nbsp;</p>
+                        <h1 style="text-align: center;"><span style="text-decoration: underline;"><span style="color: #000000; text-decoration: underline;">BIENVENIDOS A MI BLOG</span></span></h1> {% endblock texto_header %}</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>
+
+<a class="navbar-brand" href={% url 'acerca_de_nosotros' %}><p><span style="text-decoration: underline;"><span style="color: #000000; text-decoration: underline;">ACERCA DE NOSTROS</span></span></p></a>
 {% endblock header %}
