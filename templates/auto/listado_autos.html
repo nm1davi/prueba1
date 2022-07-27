@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Listado de Autos</title>
+{% endblock title %}
+
+{% block texto_header %}
+<h1>
+    Listado de Autos
+</h1>
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+<p>
+    <a href={% url 'crear_Auto' %}>Crear Auto</a>
+</p>
+
+<p>
+    <form action={% url 'listado_Autos' %}>
+        {{form}}
+        <button>Buscar</button>
+    </form>
+</p>
+
+
+<p>
+    {% if listado_Autos %}
+    <ul>
+        {% for auto in listado_Autos %}
+        <li>
+            {{auto}} 
+            <a href={% url 'editar_Auto' auto.id %}>Editar</a>
+            <a href={% url 'eliminar_Auto' auto.id %}>Eliminar</a>
+            <a href={% url 'mostrar_Auto' auto.id %}>Mostrar</a>
+
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    No se encotraron datos.
+    {% endif %}
+</p>
+{% endblock despues_del_header %}
